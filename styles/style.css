@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Overpass";
+}
+
+@keyframes pop-in {
+  from {
+    scale: 50%;
+    opacity: 0%;
+  }
+  to {
+    scale: 100%;
+    opacity: 100%;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+body {
+  background: hsl(216, 12%, 8%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body .hidden {
+  display: none !important;
+  animation: fade 300ms ease-out;
+}
+body .container {
+  background: radial-gradient(at center top, rgb(35, 41, 50), rgb(22, 29, 38));
+  border-radius: 2rem;
+}
+body .container .rating-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 2rem;
+  max-width: 25rem;
+  min-height: 25rem;
+  animation: fade 300ms;
+}
+body .container .star {
+  position: relative;
+  left: 0;
+  display: flex;
+  padding: 1rem;
+  background: hsl(213, 19%, 18%);
+  border-radius: 50%;
+}
+body .container h2 {
+  color: white;
+  font-size: 1.8rem;
+}
+body .container p {
+  color: hsl(216, 12%, 54%);
+  font-size: 1rem;
+}
+body .container form {
+  width: 100%;
+}
+body .container form fieldset {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: none;
+  margin-bottom: 1.5rem;
+}
+body .container form fieldset .rating-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: hsl(213, 19%, 18%);
+  color: hsl(216, 12%, 54%);
+  width: 3rem;
+  height: 3rem;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.2s;
+}
+body .container form fieldset .rating-label:hover {
+  background: hsl(25, 97%, 53%);
+  color: hsl(0, 0%, 100%);
+  transition: 0.2s;
+}
+body .container form fieldset .rating-label .rating-input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  cursor: pointer;
+}
+body .container form fieldset .rating-label .rating-input:checked {
+  background: hsl(216, 12%, 54%);
+  transition: 0.2s;
+}
+body .container form fieldset .rating-label .rating-input:checked + span {
+  color: hsl(0, 0%, 100%);
+  transition: 0.2s;
+}
+body .container form fieldset .rating-label span {
+  position: absolute;
+  margin-top: 0.1rem;
+}
+body .container .submit {
+  width: 100%;
+  background: hsl(25, 97%, 53%);
+  border: none;
+  padding: 0.8rem;
+  border-radius: 2rem;
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+body .container .submit:hover {
+  color: hsl(25, 97%, 53%);
+  background: hsl(0, 0%, 100%);
+  transition: 0.2s;
+}
+body .container .thanks-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.7rem;
+  max-width: 25rem;
+  min-height: 25rem;
+  animation: pop-in 300ms ease-out;
+}
+body .container .thanks-container .rating-score-container {
+  background: hsl(213, 19%, 18%);
+  color: hsl(25, 97%, 53%);
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+}
+body .container .thanks-container .thanks-message {
+  text-align: center;
+  position: relative;
+  bottom: 0.8rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 0.5rem;
+  width: 100%;
+  left: 0;
+}
+
+.attribution a {
+  color: hsl(25, 97%, 53%);
+}
+
+.attribution p {
+  color: hsl(216, 12%, 54%);
+}/*# sourceMappingURL=style.css.map */

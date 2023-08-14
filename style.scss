@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Overpass';
+}
+
+$Orange: hsl(25, 97%, 53%);
+$White: hsl(0, 0%, 100%);
+$MediumGrey: hsl(216, 12%, 54%);
+$DarkBlue: hsl(213, 19%, 18%);
+$VeryDarkBlue: hsl(216, 12%, 8%);
+$LightDarkBlue: hsla(213, 19%, 18%);
+
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+@keyframes pop-in {
+    from{
+        scale: 50%;
+        opacity: 0%;
+    }
+    to{
+        scale: 100%;
+        opacity: 100%;
+    }
+}
+
+@keyframes fade {
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+
+
+
+body {
+    background: $VeryDarkBlue;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    .hidden{
+        display: none !important;
+        animation: fade 300ms ease-out;
+    }
+
+
+    .container{
+        background: radial-gradient(at center top, rgba(35, 41, 50, 1.0), rgba(22, 29, 38, 1.0));
+        border-radius: 2rem;
+
+        .rating-state{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1rem;
+            align-items: flex-start;
+            padding: 2rem;
+            max-width: 25rem;
+            min-height: 25rem;
+            animation: fade 300ms;
+        }
+
+        .star{
+            position: relative;
+            left: 0;
+            display: flex;
+            padding: 1rem;
+            background: $LightDarkBlue;
+            border-radius: 50%;
+        }
+
+        h2{
+             color: white;
+             font-size: 1.8rem;
+        }
+
+        p{
+            color: $MediumGrey;
+            font-size: 1rem;
+        }
+
+        form{
+            width: 100%;
+
+            fieldset{
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                border: none;
+                margin-bottom: 1.5rem;
+    
+                .rating-label{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    background: $LightDarkBlue;
+                    color: $MediumGrey;
+                    width: 3rem;
+                    height: 3rem;
+                    overflow: hidden;
+                    cursor: pointer;
+                    transition: .2s;
+                    
+                    &:hover{
+                        background: $Orange;
+                        color: $White;
+                        transition: .2s;
+                    }
+    
+                    .rating-input{
+                        appearance: none;
+                        width: 100%;
+                        height: 100%;
+                        transition: .2s;
+    
+                        cursor: pointer;
+    
+                        &:checked{
+                            background: $MediumGrey;
+                            transition: .2s;
+                        }
+                        &:checked+span{
+                            color: $White;
+                            transition: .2s;
+                        }
+                        
+                    }
+    
+                    span{
+                        position: absolute;
+                        margin-top: 0.1rem;
+                    }
+                    
+                }
+            }
+
+
+        }
+        
+
+        .submit{
+            width: 100%;
+            background: $Orange;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 2rem;
+            color: $White;
+            font-size: 1rem;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover{
+                color: $Orange;
+                background: $White;
+                transition: .2s;
+            }
+        }
+
+        .thanks-container{
+            display: flex;
+            flex-direction: column;
+            justify-content:space-between;
+            align-items: center;
+            padding: 1.7rem;
+            max-width: 25rem;
+            min-height: 25rem;
+            animation: pop-in 300ms ease-out;
+
+            .rating-score-container{
+                background: $LightDarkBlue;
+                color: $Orange;
+                padding: 0.5rem 1rem 0.5rem 1rem;
+                border-radius: 25px;
+                font-size: 0.9rem;
+            }
+
+            .thanks-message{
+                text-align: center;
+                position: relative;
+                bottom: 0.8rem;
+            }
+        }
+    }
+    
+}
+
+.attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0.5rem; width: 100%; left: 0; }
+.attribution a { color: $Orange; }
+.attribution p { color: $MediumGrey;}
