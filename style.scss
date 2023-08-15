@@ -196,3 +196,17 @@ body {
 .attribution { font-size: 11px; text-align: center; position: fixed; bottom: 0.5rem; width: 100%; left: 0; }
 .attribution a { color: $Orange; }
 .attribution p { color: $MediumGrey;}
+
+@media screen and (max-width: 576px) {
+    .container{
+        border-radius: 1.5rem !important;
+        
+        scale: 85%;
+    }
+    .attribution{
+        position: relative;
+    }
+    #resubmit{
+
+    }
+}

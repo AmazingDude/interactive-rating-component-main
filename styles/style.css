@@ -172,4 +172,14 @@ body .container .thanks-container .thanks-message {
 
 .attribution p {
   color: hsl(216, 12%, 54%);
+}
+
+@media screen and (max-width: 576px) {
+  .container {
+    border-radius: 1.5rem !important;
+    scale: 85%;
+  }
+  .attribution {
+    position: relative;
+  }
 }/*# sourceMappingURL=style.css.map */

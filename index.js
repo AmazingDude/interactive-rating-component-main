@@ -26,9 +26,11 @@ const setForm = ()=> {
         e.preventDefault();
         thankState.classList.add("hidden");
         rateState.classList.remove("hidden");
+        submitButton.disabled = true;
         inputField.forEach(input => {
             input.checked = false;
         });
+
     });
 };
 
