@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop Preview](./Previvew.png)
+![Desktop Preview](./Preview.png)
 
 ### Links
 
